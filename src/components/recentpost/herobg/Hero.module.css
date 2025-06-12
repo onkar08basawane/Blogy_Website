@@ -1,0 +1,43 @@
+.mainhero {
+  width: 100%;
+  padding: 2rem 0;
+  background-color:#83d0e7;
+  height: 420px;
+}
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color:#83d0e7 ;
+}
+
+.maintext {
+  flex: 1;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  padding-right: 2rem;
+  background-color:#83d0e7 ;
+  margin-top: 40px;
+}
+
+.maintext strong {
+  color: black;
+  background-color: #83d0e7;
+}
+
+.mainimg {
+  flex: 1;
+   background-color:#83d0e7 ;
+   margin-top: 52px;
+}
+
+.mainimg img {
+  width: 100%;
+  height: auto;
+  /* border-radius: 8px; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}

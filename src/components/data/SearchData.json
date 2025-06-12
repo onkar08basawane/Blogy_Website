@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "React Tips",
+    "content": "Useful React tricks to improve your code."
+  },
+  {
+    "id": 2,
+    "title": "CSS Layouts",
+    "content": "Mastering Flexbox and Grid."
+  },
+  {
+    "id": 3,
+    "title": "Blog Design",
+    "content": "Design principles for a clean blog UI."
+  }
+]

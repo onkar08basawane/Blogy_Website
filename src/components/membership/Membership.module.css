@@ -1,0 +1,92 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  background: none;
+  flex-wrap: wrap;
+}
+
+.card {
+  border-radius: 24px;
+  box-shadow: 0 0 20px rgba(184, 10, 10, 0.06);
+  padding: 40px 30px;
+  width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 20px 30px rgba(227, 60, 60, 0.12);
+  
+}
+
+.highlighted {
+  background-color: #e95f66;
+  color: white;
+  transform: scale(1.08); 
+  z-index: 1;
+  
+}
+
+.highlighted h2{
+    background: none;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  background: none;
+}
+
+.highlighted .subtitle {
+  color:white;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 24px 0;
+  background: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  background: none;
+}
+
+li {
+  margin: 10px 0;
+  background: none;
+}
+
+button {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  background-color: #1b2345;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.highlighted button {
+  background-color: white;
+  color: #1f2a5c;
+}
+
+button:hover {
+  background-color: #9e0707;
+  color: white;
+}
+ 
+.highlighted button:hover{
+    background-color: #1b2345;
+}
