@@ -8,6 +8,7 @@ const Navbar = () => {
 
   return (
     <header className={styles.NavbarHeader}>
+      <div className={styles.NavbarWrapper}>
       <div className={styles.Navbar}>
         <img src="/logo.svg" alt='logo' className={styles.logo} />
         <ul className={styles.navList}>
@@ -16,6 +17,7 @@ const Navbar = () => {
           <li><Link to='/membership' className={styles.link}>Membership</Link></li>
           <li className={styles.search}> <Link to='/search' className={styles.link}><IoSearch /></Link></li>
         </ul>
+      </div>
       </div>
        {/* <Search isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} /> */}
     </header>

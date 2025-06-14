@@ -7,7 +7,7 @@ function Hero() {
       <div className={styles.heroContent}>
         <div className={styles.textContent}>
           <div className={styles.artical}>
-            <strong>Hey, we're Blogy.</strong> See <br/>our thoughts, stories and<br/> ideas.
+            <strong>Hey, we're Blogy.</strong> See our thoughts,<br/> stories and ideas.
           </div>
 
           <div className={styles.input}>
