@@ -1,11 +1,11 @@
 import React from 'react'
-import RecentPost from '../components/recentpost/RecentPost'
+import RecentPost from '../components/recentpost/RecentPost';
 function RecentPage() {
   return (
     <div>
-      <RecentPost/>
+      <RecentPost />
     </div>
   )
 }
 
-export default RecentPage
+export default RecentPage;

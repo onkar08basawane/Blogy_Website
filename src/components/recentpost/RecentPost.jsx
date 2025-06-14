@@ -10,7 +10,7 @@ function RecentPost() {
       setLoading(false);
     }, 2000); // 2 seconds simulated delay
     return () => clearTimeout(timer);
-  }, []);
+  }, []);  
 
   const recent = [
     {
