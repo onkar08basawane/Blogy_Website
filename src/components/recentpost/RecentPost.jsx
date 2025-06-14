@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styles from './RecentPost.module.css';
+import styles from './herobg/RecentPost.module.css';
 import HeroBg from './herobg/HeroBg';
 
 function RecentPost() {
