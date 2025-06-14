@@ -1,5 +1,5 @@
 import React from 'react'
-import RecentPost from '../components/recentpost/RecentPost';
+import RecentPost from '../components/recentpost/cards/RecentPost';
 function RecentPage() {
   return (
     <div>

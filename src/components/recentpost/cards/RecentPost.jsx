@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './RecentPost.module.css';
-import HeroBg from './herobg/HeroBg';
+import HeroBg from '../herobg/HeroBg';
 
 function RecentPost() {
   const [loading, setLoading] = useState(true);
