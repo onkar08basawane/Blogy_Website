@@ -1,80 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import styles from './Navbar.module.css'
 import { IoSearch } from "react-icons/io5";
-import { Link } from 'react-router-dom'; 
-import styles from './Navbar.module.css';
-import SearchData from '../data/SearchData.json'; // ⬅️ import JSON
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const [showInput, setShowInput] = useState(false);
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
-
-  const handleSearchClick = () => {
-    if (!showInput) {
-      setShowInput(true); // show input
-    } else if (query.trim()) {
-      const q = query.toLowerCase();
-      const matched = SearchData.filter(
-        post =>
-          post.title.toLowerCase().includes(q) ||
-          post.content.toLowerCase().includes(q)
-      );
-      setResults(matched);
-      console.log("Search results:", matched); // You can render this instead
-    }
-  };
-  const handleKeyPress = (e) => {
-  if (e.key === 'Enter' && query.trim()) {
-    const q = query.toLowerCase();
-    const matched = blogPosts.filter(
-      post =>
-        post.title.toLowerCase().includes(q) ||
-        post.content.toLowerCase().includes(q)
-    );
-    setResults(matched);
-    console.log("Search results:", matched);
-  }
-};
-
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <header className={styles.Navbarheader}>
+    <header className={styles.NavbarHeader}>
       <div className={styles.Navbar}>
-        <img src="./logo.svg" alt="Logo" className={styles.logo} />
+        <img src="/logo.svg" alt='logo' className={styles.logo} />
+        <ul className={styles.navList}>
+          <li><Link to='/' className={styles.link}>Home</Link></li>
+          <li><Link to='/recentpost' className={styles.link}>Recent Post</Link></li>
+          <li><Link to='/membership' className={styles.link}>Membership</Link></li>
+          <li className={styles.search}> <Link to='/search' className={styles.link}><IoSearch /></Link></li>
+        </ul>
       </div>
-
-      <ul className={styles.navList}>
-        <li><Link to="/" className={styles.link}>Home</Link></li>
-        <li><Link to="/recentpost" className={styles.link}>Recent Posts</Link></li>
-        <li><Link to="/membership" className={styles.link}>Membership</Link></li>
-        <li className={styles.search} onClick={handleSearchClick}>
-          <IoSearch />
-        </li>
-        {showInput && (
-          <input
-            type="text"
-            className={styles.searchInput}
-            placeholder="Search..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            onKeyDown={handleKeyPress}
-          />
-        )}
-      </ul>
-
-      {/* Show results below navbar */}
-      {results.length > 0 && (
-        <div className={styles.searchResults}>
-          {results.map((post) => (
-            <div key={post.id}>
-              <h4>{post.title}</h4>
-              <p>{post.content}</p>
-            </div>
-          ))}
-        </div>
-      )}
+       {/* <Search isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} /> */}
     </header>
-  );
-};
+  )
+}
 
 export default Navbar;
+
+
+
+{/* <div class="search-box">
+        <button class="btn-search"><i class="fas fa-search"></i></button>
+        <input type="text" class="input-search" placeholder="Type to Search...">
+      </div> */}

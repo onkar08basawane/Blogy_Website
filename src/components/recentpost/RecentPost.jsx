@@ -1,7 +1,17 @@
-import React from 'react'
-import styles from './RecentPost.module.css'
+import React, { useEffect, useState } from 'react';
+import styles from './RecentPost.module.css';
 import HeroBg from './herobg/HeroBg';
+
 function RecentPost() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // 2 seconds simulated delay
+    return () => clearTimeout(timer);
+  }, []);
+
   const recent = [
     {
       img: "https://codewithsadee.github.io/blogy/assets/images/recent-1.jpg",
@@ -55,66 +65,58 @@ function RecentPost() {
   ];
 
   return (
-  <>
-  <HeroBg/>
-  <div className={styles.Container}>
-    <div className={styles.size}></div>
-        <div className={styles.titleSection}>
-          <div className={styles.title}>
-            <strong>Recent Posts</strong>
+    <>
+      <HeroBg />
+      <div className={styles.Container}>
+        {loading ? (
+          <div className={styles.loaderContainer}>
+            <div className={styles.loader}></div>
+            <p>Loading recent posts...</p>
           </div>
-
-          <div className={styles.logoSection}>
-            <div className={styles.logoContainer}>
-              <img
-                src="https://codewithsadee.github.io/blogy/assets/images/author-5.jpg"
-                className={styles.logo}
-              />
-              <img
-                src="https://codewithsadee.github.io/blogy/assets/images/author-4.jpg"
-                className={styles.logo}
-              />
-              <img
-                src="https://codewithsadee.github.io/blogy/assets/images/author-3.jpg"
-                className={styles.logo}
-              />
-              <img
-                src="https://codewithsadee.github.io/blogy/assets/images/author-2.jpg"
-                className={styles.logo}
-              />
-              <img
-                src="https://codewithsadee.github.io/blogy/assets/images/author-1.jpg"
-                className={styles.logo}
-              />
-            </div>
-          </div>
-          <div className={styles.Authors}>
-            <p>Meet our top authors</p>
-          </div>
-
-        </div>
-        <hr/>
-        <div className={styles.container}>
-          {recent.map((item, index) => (
-            <div className={styles.latelyCard} key={index}>
-              <img src={item.img} alt={`Lately ${index + 1}`} />
-              <div className={styles.buttonContainer}>
-                {item.buttons.map((button, btnIndex) => (
-                  <button key={btnIndex} className={styles.button}>
-                    {button}
-                  </button>
-                ))}
+        ) : (
+          <>
+            <div className={styles.size}></div>
+            <div className={styles.titleSection}>
+              <div className={styles.title}>
+                <strong>Recent Posts</strong>
               </div>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
+              <div className={styles.logoSection}>
+                <div className={styles.logoContainer}>
+                  <img src="https://codewithsadee.github.io/blogy/assets/images/author-5.jpg" className={styles.logo} />
+                  <img src="https://codewithsadee.github.io/blogy/assets/images/author-4.jpg" className={styles.logo} />
+                  <img src="https://codewithsadee.github.io/blogy/assets/images/author-3.jpg" className={styles.logo} />
+                  <img src="https://codewithsadee.github.io/blogy/assets/images/author-2.jpg" className={styles.logo} />
+                  <img src="https://codewithsadee.github.io/blogy/assets/images/author-1.jpg" className={styles.logo} />
+                </div>
+              </div>
+              <div className={styles.Authors}>
+                <p>Meet our top authors</p>
+              </div>
             </div>
-          ))}
-        </div>
-        <button className={styles.loadMoreButton}>Load More</button>
-        <hr />
+            <hr />
+            <div className={styles.container}>
+              {recent.map((item, index) => (
+                <div className={styles.latelyCard} key={index}>
+                  <img src={item.img} alt={`Lately ${index + 1}`} />
+                  <div className={styles.buttonContainer}>
+                    {item.buttons.map((button, btnIndex) => (
+                      <button key={btnIndex} className={styles.button}>
+                        {button}
+                      </button>
+                    ))}
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              ))}
+            </div>
+            <button className={styles.loadMoreButton}>Load More</button>
+            <hr />
+          </>
+        )}
       </div>
-  </>
-  )
+    </>
+  );
 }
 
-export default RecentPost
+export default RecentPost;
